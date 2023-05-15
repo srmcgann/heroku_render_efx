@@ -88,6 +88,12 @@
     } else {
       resolution = 2
     }
+    hmf = window.location.href.toUpperCase().split('HMF=')[1]
+    if(typeof hmf !== 'undefined' && hmf.length){
+      hmf=+hmf.split('&')[0]
+    } else {
+      hmf = 3
+    }
     vars=0
     song = './epiphany.mp3'
     vid = ''
@@ -303,9 +309,9 @@
             src[1].oncanplay=()=>{
               src[0]=true
               if(c.height/src[1].videoHeight<c.width/src[1].videoWidth){
-                hex_mag = c.height/resolution/src[1].videoHeight*(src[1].videoHeight/src[1].videoWidth*6.5)
+                hex_mag = c.height/resolution/src[1].videoHeight*(src[1].videoHeight/src[1].videoWidth*hmf)
               }else{
-                hex_mag = c.width/resolution/src[1].videoWidth*(src[1].videoHeight/src[1].videoWidth*6.6666)
+                hex_mag = c.width/resolution/src[1].videoWidth*(src[1].videoHeight/src[1].videoWidth*hmf)
               }
               src[1].loop = true
               if(autoplay) src[1].muted = true
@@ -339,9 +345,9 @@
           if(hex){
             if(type != 'vid'){
               if(c.height/src[1].height<c.width/src[1].width){
-                hex_mag = c.height/resolution/src[1].height*(src[1].height/src[1].width*3.5)
+                hex_mag = c.height/resolution/src[1].height*(src[1].height/src[1].width*hmf)
               }else{
-                hex_mag = c.width/resolution/src[1].width*(src[1].height/src[1].width*11.5)
+                hex_mag = c.width/resolution/src[1].width*(src[1].height/src[1].width*hmf)
               }
             }
             hex_buffer = document.createElement('canvas')
