@@ -328,7 +328,7 @@
             tcx = tc.getContext('2d')
           }
           if(type=='vid') src[1].defaultPlaybackRate = playbackSpeed
-          src[1].src="/proxy.php/?url=<?=$url?>"
+          src[1].src="/proxy.php/?url=<?php=$url?>"
         }
       
         if(modes.indexOf('vignette')!==-1){
