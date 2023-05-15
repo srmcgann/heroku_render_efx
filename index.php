@@ -167,7 +167,7 @@
         if(!t){
           
           hex_margin = 1.05
-          let srcurl = "<?=$url?>"
+          let srcurl = "<?php echo $url?>"
           if(
             srcurl.toLowerCase().indexOf('.jpg') !== -1 ||
             srcurl.toLowerCase().indexOf('.jpeg') !== -1 ||
@@ -328,7 +328,7 @@
             tcx = tc.getContext('2d')
           }
           if(type=='vid') src[1].defaultPlaybackRate = playbackSpeed
-          src[1].src="/proxy.php/?url=<?php=$url?>"
+          src[1].src="/proxy.php/?url=<?php echo $url ?>"
         }
       
         if(modes.indexOf('vignette')!==-1){
